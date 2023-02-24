@@ -29,9 +29,9 @@ def area_of_rectangle(height, width = None):
     >>> area_of_rectangle (7, 2)
     14
     """
-    if width:
+    if width is None:
         width = height
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
     area = height * width
     return area
 
@@ -42,12 +42,10 @@ if __name__ == '__main__':
                 "\tthe height of a square or the height and width of a "
                 "rectangle".format(script_name = sys.argv[0]))
         sys.exit(message)
-    import pdb; pdb.set_trace()
-    height = sys.argv[1]
+    height = int(sys.argv[1])
     width = height
-    if len(sys.argv) > 3:
-    import pdb; pdb.set_trace()
-        width = sys.argv[1]
+    if len(sys.argv) == 3:
+        width = int(sys.argv[2])
 
     area = area_of_rectangle(height, width)
 
